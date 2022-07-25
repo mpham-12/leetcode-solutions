@@ -8,8 +8,8 @@ var runningSum = function(nums) {
   let sum = 0;
 
   //add sum with each index of nums, and push into new array
-  for (let i = 0; i < nums.length; i++) {
-    sum += nums[i];
+  for (num of nums) {
+    sum += num;
     array.push(sum)
   }
 
