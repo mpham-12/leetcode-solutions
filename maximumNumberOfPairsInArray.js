@@ -6,12 +6,17 @@ var numberOfPairs = function(nums) {
   let pairs = {};
   let remainder = 0;
 
+  // add properties to pairs obj, with number of times they are repeated
   for (num of nums) {
     pairs[num] = (pairs[num] || 0) + 1;
   }
+
+  //count the number of key values that are >1
   let numOfPairs = Object.values(pairs).filter(pair => pair !== 1).length;
-  console.log('PAIRS===', pairs)
-  console.log('NUM OF PAIRS===', numOfPairs)
+
+  //for each property with >= 3, round down, divide by 2, then divide by 2 again to get the additional pairs
+  //add additional pairs to numOfPairs
+  //if key values === 1, add it to remainder
   for (pair of Object.values(pairs)) {
     if (pair/2 >=2) {
       console.log(pair)
@@ -23,7 +28,6 @@ var numberOfPairs = function(nums) {
   }
 
   return [numOfPairs, remainder]
-
 };
 
 
